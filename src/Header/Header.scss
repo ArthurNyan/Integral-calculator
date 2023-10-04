@@ -1,0 +1,19 @@
+.h {
+  display: block;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  font-size: 24px;
+  align-items: center;
+  padding: 30px;
+}
+
+.ul {
+  display: flex;
+  font-size: 20px;
+  li {
+    margin-right: 20px;
+  }
+}
