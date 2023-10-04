@@ -1,10 +1,19 @@
-body{
+body {
   background-color: #f0ead2;
   /* background-color: #a8dadc; #c7f9cc #b5e48c */
 }
 
-nav{
+nav {
   color: #121212;
   background-color: #B5E48C;
   /* width: 20wh; */
+}
+
+ul{
+  margin-bottom: 10px;
+}
+
+li {
+  text-indent: 30px;
+  cursor: pointer;
 }

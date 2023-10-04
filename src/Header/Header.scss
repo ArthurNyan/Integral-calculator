@@ -4,10 +4,10 @@
 
 .nav {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   font-size: 24px;
   align-items: center;
-  padding: 30px;
+  padding: 20px 120px ;
 }
 
 .ul {
@@ -16,4 +16,14 @@
   li {
     margin-right: 20px;
   }
+}
+
+.img {
+  height: 90px;
+  margin-right: 20px;
+}
+
+.logo{
+  display: flex;
+  align-items: center;
 }
