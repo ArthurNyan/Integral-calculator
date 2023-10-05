@@ -1,16 +1,13 @@
 import './App.css'
-import Body from './Body/Body'
-import Header from './Header/Header'
+import Header from './Widgets/Header/Header'
 
-function App() {
+import { Provider } from './Provider/Provider';
 
-  return (
-    <>
-      <div></div>
-      <Header />
-      <Body/>
-    </>
-  )
-}
+const App = () => {
+  return <>
+    <Header />
+    <Provider />
+  </>
+};
 
-export default App
+export default App;

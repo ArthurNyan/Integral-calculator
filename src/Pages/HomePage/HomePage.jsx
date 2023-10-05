@@ -1,6 +1,6 @@
-import "./Body.scss"
+import './HomePage.scss'
 
-const Body = () => {
+const HomePage = () => {
     return <section className="section">
         <div className="first-section">
             <div className="block-1">Интеграл</div>
@@ -56,4 +56,4 @@ const Body = () => {
     </section>
 }
 
-export default Body
+export default HomePage
