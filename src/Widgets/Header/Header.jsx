@@ -8,8 +8,8 @@ const Header = () => {
                 <div>Герценовский калькулятор</div>
             </div>
             <ul className="ul">
-                <li className="li"><button>Главная</button></li>
-                <li><button>Авторы</button></li>
+                <li className="li"><a href="/">Главная</a></li>
+                <li><a href="author">Авторы</a></li>
             </ul>
         </nav>
     </header>
