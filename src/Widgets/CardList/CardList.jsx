@@ -16,7 +16,7 @@ const CardList = () => {
             <div className="mg">
                 <div>Переменный шаг</div>
                 <ul className="ul-1">
-                    <li className='www'><a onClick={() => dispatch(update())}>С двойной проверкаой</a></li>
+                    <li><a onClick={() => dispatch(update())}>С двойной проверкаой</a></li>
                     <li><a onClick={() => dispatch(update())}>Lorem ipsum dolor sit amet consectetur</a></li>
                 </ul>
             </div>
