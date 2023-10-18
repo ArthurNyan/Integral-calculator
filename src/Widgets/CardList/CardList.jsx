@@ -16,7 +16,7 @@ const CardList = () => {
             <div className="mg">
                 <div>Переменный шаг</div>
                 <ul className="ul-1">
-                    <li><a onClick={() => dispatch(update())}>С двойной проверкаой</a></li>
+                    <li><a onClick={() => dispatch(update())}>С двойной проверкой</a></li>
                     <li><a onClick={() => dispatch(update())}>Lorem ipsum dolor sit amet consectetur</a></li>
                 </ul>
             </div>
@@ -24,10 +24,10 @@ const CardList = () => {
             <div className="mg">
                 <div >Постоянный шаг</div>
                 <ul>
-                    <li><a onClick={() => dispatch(update())}>Lorem ipsum dolor sit amet consectetur</a></li>
-                    <li><a onClick={() => dispatch(update())}>Lorem ipsum dolor sit amet consectetur</a></li>
-                    <li><a onClick={() => dispatch(update())}>Lorem ipsum dolor sit amet consectetur</a></li>
-                    <li><a onClick={() => dispatch(update())}>Lorem ipsum dolor sit amet consectetur</a></li>
+                    <li><a onClick={() => dispatch(update())}>Способ левых прямоугольников</a></li>
+                    <li><a onClick={() => dispatch(update())}>Способ правых прямоугольников</a></li>
+                    <li><a onClick={() => dispatch(update())}>Способ трапеций</a></li>
+                    <li><a onClick={() => dispatch(update())}>Способ порабол</a></li>
                 </ul>
             </div>
             <div className="mg">
