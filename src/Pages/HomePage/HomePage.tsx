@@ -7,7 +7,7 @@ import { RootState } from "../../app/store";
 
 const HomePage = () => {
 
-    const pageState = useSelector((state: RootState) => state.counter.value)
+    const pageState = useSelector((state: RootState) => state.pageState.value)
     const dispatch = useDispatch()
 
     return <>
