@@ -6,7 +6,6 @@ import { update } from '../../app/slice1'
 const CardList = () => {
 
     const pageState = useSelector((state) => state.pageState.value)
-
     const dispatch = useDispatch()
 
     return <section className="section">

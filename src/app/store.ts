@@ -8,10 +8,12 @@
 
 import { configureStore } from '@reduxjs/toolkit'
 import pageStateReducer from './slice1'
+import intStateReducer from './slice2'
 
 export const store = configureStore({
   reducer: {
     pageState: pageStateReducer,
+    intState: intStateReducer,
   },
 })
 
