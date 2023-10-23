@@ -1,10 +1,9 @@
 import React from 'react'
 import './CardList.scss'
 import { useDispatch, useSelector } from 'react-redux'
-import { update } from '../../app/slice1'
+import { update } from '../../app/store/slice1'
 
 const CardList = () => {
-
     const pageState = useSelector((state) => state.pageState.value)
     const dispatch = useDispatch()
 

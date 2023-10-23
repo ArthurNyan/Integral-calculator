@@ -1,3 +1,5 @@
 /node_modules
 
 *.py
+/src/shared/font 
+/src/app/appLogic/ts

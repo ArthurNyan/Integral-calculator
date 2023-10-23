@@ -1,7 +1,7 @@
 import React from "react"
 import './IntApp.scss'
 import { useDispatch } from "react-redux"
-import { updateA, updateB, updateInteg } from "../../app/slice2"
+import { updateA, updateB, updateInteg } from "../../app/store/slice2"
 
 
 const IntApp = ( a, b ) => {
