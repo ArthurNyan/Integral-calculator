@@ -2,17 +2,14 @@ import { useEffect, useState } from "react"
 import CardList from "../../Widgets/CardList/CardList"
 import React from "react";
 import IntApp from "../../Widgets/IntApp/IntApp";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../app/store";
+import { useSelector } from "react-redux";
+import { RootState } from "../../app/store/store";
 
 const HomePage = () => {
-
-    const pageState = useSelector((state: RootState) => state.pageState.value)
-    const dispatch = useDispatch()
+    const pageState = useSelector((state: RootState) => state.intState.endpoint)
 
     return <>
-        {(pageState === 'first_page') && <CardList />}
-        {(pageState === 'int_page') && <IntApp />}
+        {(pageState === '') ? <CardList /> : <IntApp />}
     </>
 }
 

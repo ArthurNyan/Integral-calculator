@@ -1,10 +1,9 @@
 import React from 'react'
 import './CardList.scss'
-import { useDispatch, useSelector } from 'react-redux'
-import { update } from '../../app/store/slice1'
+import { useDispatch} from 'react-redux'
+import { updateEndPoint } from '../../app/store/intSlice'
 
 const CardList = () => {
-    const pageState = useSelector((state) => state.pageState.value)
     const dispatch = useDispatch()
 
     return <section className="section">
@@ -13,25 +12,24 @@ const CardList = () => {
             <div className="mg">
                 <div>Переменный шаг</div>
                 <ul className="ul-1">
-                    <li><a onClick={() => dispatch(update())}>С двойной проверкой</a></li>
-                    <li><a onClick={() => dispatch(update())}>Lorem ipsum dolor sit amet consectetur</a></li>
+                    <li><a onClick={() => dispatch(updateEndPoint('double_step'))}>С двойной проверкой</a></li>
+                    <li><a onClick={() => dispatch(updateEndPoint('hz_step'))}>С какой-то проверкой</a></li>
                 </ul>
             </div>
 
             <div className="mg">
                 <div >Постоянный шаг</div>
                 <ul>
-                    <li><a onClick={() => dispatch(update())}>Способ левых прямоугольников</a></li>
-                    <li><a onClick={() => dispatch(update())}>Способ правых прямоугольников</a></li>
-                    <li><a onClick={() => dispatch(update())}>Способ трапеций</a></li>
-                    <li><a onClick={() => dispatch(update())}>Способ порабол</a></li>
+                    <li><a onClick={() => dispatch(updateEndPoint('integrate_left'))}>Способ левых прямоугольников</a></li>
+                    <li><a onClick={() => dispatch(updateEndPoint('integrate_right'))}>Способ правых прямоугольников</a></li>
+                    <li><a onClick={() => dispatch(updateEndPoint('integrate_trapec'))}>Способ трапеций</a></li>
+                    <li><a onClick={() => dispatch(updateEndPoint('integrate_parabol'))}>Способ порабол</a></li>
                 </ul>
             </div>
             <div className="mg">
                 <div>Кратное</div>
                 <ul>
-                    <li><a onClick={() => dispatch(update())}>Lorem ipsum dolor sit amet consectetur</a></li>
-                    <li><a onClick={() => dispatch(update())}>Lorem ipsum dolor sit amet consectetur</a></li>
+                    <li><a onClick={() => dispatch(updateEndPoint('even_alg'))}>Lorem ipsum dolor sit amet consectetur</a></li>
                 </ul>
             </div>
         </div>
@@ -40,22 +38,22 @@ const CardList = () => {
             <div className="mg">
                 <div>Переменный шаг</div>
                 <ul className="ul-1">
-                    <li><a onClick={() => dispatch(update())} >С двойной проверкаой</a></li>
-                    <li><a onClick={() => dispatch(update())}>Lorem ipsum dolor sit amet consectetur</a></li>
+                    <li><a onClick={() => dispatch(updateEndPoint())} >С двойной проверкаой</a></li>
+                    <li><a onClick={() => dispatch(updateEndPoint())}>Lorem ipsum dolor sit amet consectetur</a></li>
                 </ul>
             </div>
 
             <div className="mg">
                 <div >Тоже шаг</div>
                 <ul>
-                    <li><a onClick={() => dispatch(update())} >Треугольник какой-то</a></li>
+                    <li><a onClick={() => dispatch(updateEndPoint())} >Треугольник какой-то</a></li>
                 </ul>
             </div>
             <div className="mg">
                 <div>Кратное</div>
                 <ul>
-                    <li><a onClick={() => dispatch(update())} >Кратный тругольник</a></li>
-                    <li><a onClick={() => dispatch(update())} >Квадратный треугольник</a></li>
+                    <li><a onClick={() => dispatch(updateEndPoint())} >Кратный тругольник</a></li>
+                    <li><a onClick={() => dispatch(updateEndPoint())} >Квадратный треугольник</a></li>
                 </ul>
             </div>
         </div>

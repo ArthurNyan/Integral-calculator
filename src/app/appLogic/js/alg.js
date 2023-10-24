@@ -1,57 +1,57 @@
 import { solve, solve_even } from "./eval.js";
 
-const n = 100;
+const n = 1000;
 
 export const integrate_left = (a, b, equation) => {
-    let s = 0;
-    let t = (b - a) / n;
+    let sum = 0;
+    let step = (b - a) / n;
     let x = a;
     while (x <= b) {
-        s = s + solve(x, equation)
-        x = x + t
+        sum += solve(x, equation)
+        x += step
     }
-    return s * t
+    return sum * step
 }
 
 export const integrate_right = (a, b, equation) => {
-    let s = 0
-    let t = (b - a) / n
+    let sum = 0
+    let step = (b - a) / n
     let x = a
     while (x <= b) {
-        s = s + solve(x, equation)
-        x = x + t
+        sum += solve(x, equation)
+        x += step
     }
-    return s * t
+    return sum * step
 }
 
 export const integrate_trapec = (a, b, equation) => {
-    let s = 0;
-    let t = (b - a) / n;
+    let sum = 0;
+    let step = (b - a) / n;
     let x1 = a;
     let x2;
-    while (x1 <= (b - t)) {
-        x2 = x1 + t
-        s = s + (solve(x1, equation) + solve(x2, equation)) / 2
-        x1 = x1 + t
+    while (x1 <= (b - step)) {
+        x2 = x1 + step
+        sum = sum + (solve(x1, equation) + solve(x2, equation)) / 2
+        x1 = x1 + step
     }
-    return s * t
+    return sum * step
 }
 
 export const integrate_parabol = (a, b, equation) => {
-    let s = 0;
-    let t = (b - a) / n;
+    let sum = 0;
+    let step = (b - a) / n;
     let x1 = a;
     let x2, x3;
-    while (x1 <= (b - 2 * t)) {
-        x2 = x1 + t
-        x3 = x1 + 2 * t
-        s = s + solve(x1, equation) + 4 * solve(x2, equation) + solve(x3, equation)
-        x1 = x1 + 2 * t
+    while (x1 <= (b - 2 * step)) {
+        x2 = x1 + step
+        x3 = x1 + 2 * step
+        sum = sum + solve(x1, equation) + 4 * solve(x2, equation) + solve(x3, equation)
+        x1 = x1 + 2 * step
     }
-    return s * (t / 3)
+    return sum * (step / 3)
 }
 
-export const var_alg1 = (a, b, e, equation) => {
+export const double_step = (a, b, e, equation) => {
     let h = Math.sqrt(e)
     let i1 = 0
     let i2 = 0
@@ -72,7 +72,7 @@ export const var_alg1 = (a, b, e, equation) => {
     return (i2)
 }
 
-export const var_alg2 = (a, b, e, equation) => {
+export const hz_step = (a, b, e, equation) => {
     let hv = Math.sqrt(e)
     let hd = hv
     let hs = 0
@@ -98,9 +98,9 @@ export const var_alg2 = (a, b, e, equation) => {
     return (i2)
 }
 
-export const even_alg = (a, b, c, d, nx, ny, equation) => {
-    let hx = (b - a) / nx
-    let hy = (d - c) / ny
+export const even_alg = (a, b, c, d, equation) => {
+    let hx = (b - a) / n
+    let hy = (d - c) / n
     let sx = 0
     let x = a
     while (x < b - hx) {
