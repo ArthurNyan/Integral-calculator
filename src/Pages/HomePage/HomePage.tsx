@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react"
 import CardList from "../../Widgets/CardList/CardList"
 import React from "react";
 import IntApp from "../../Widgets/IntApp/IntApp";

@@ -7,7 +7,7 @@
   justify-content: space-between;
   font-size: 24px;
   align-items: center;
-  padding: 20px 120px ;
+  padding: 20px 120px;
 }
 
 .ul {
@@ -23,7 +23,16 @@
   margin-right: 20px;
 }
 
-.logo{
+.logo {
   display: flex;
   align-items: center;
+  color: #121212;
+}
+
+.link-head{
+  color: #121212;
+  transition: 100ms;
+  &:hover{
+    color: rgba(18, 18, 18, 0.5);
+  }
 }
