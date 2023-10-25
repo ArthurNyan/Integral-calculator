@@ -4,7 +4,7 @@ import './ErrorPage.scss'
 const ErrorPage = () => {
     return <div className='bbody'>
         <div className="text"><p>404</p></div>
-        <div className="container">
+        <div className="containerrr">
             <div className="caveman">
                 <div className="leg">
                     <div className="foot"><div className="fingers"></div></div>
