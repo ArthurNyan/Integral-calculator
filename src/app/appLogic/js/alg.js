@@ -72,7 +72,7 @@ export const double_step = (a, b, e, equation) => {
     return (i2)
 }
 
-export const hz_step = (a, b, e, equation) => {
+export const triple_step = (a, b, e, equation) => {
     let hv = Math.sqrt(e)
     let hd = hv
     let hs = 0

@@ -12,7 +12,7 @@ const IntApp = (a, b) => {
             <input placeholder="b" type="number" name="text" id='inputB' className="input inp-2" onChange={() => { dispatch(updateB(Number(document.getElementById('inputB').value))) }} />
             {intState.endpoint === 'even_alg' &&
                 <input placeholder="d" type="number" name="text" id='inputD' className="input inp-2" onChange={() => { dispatch(updateD(Number(document.getElementById('inputD').value))) }} />}
-            {(intState.endpoint === 'hz_step') &&
+            {(intState.endpoint === 'triple_step') &&
                 <input placeholder="e" type="number" name="text" id='inputE' className="input inp-2" onChange={() => { dispatch(updateE(Number(document.getElementById('inputE').value))) }} />}
             {(intState.endpoint === 'double_step') &&
                 <input placeholder="e" type="number" name="text" id='inputE' className="input inp-2" onChange={() => { dispatch(updateE(Number(document.getElementById('inputE').value))) }} />}

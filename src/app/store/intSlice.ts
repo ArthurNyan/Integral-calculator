@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { double_step, even_alg, hz_step, integrate_left, integrate_parabol, integrate_right, integrate_trapec } from '../appLogic/js/alg'
+import { double_step, even_alg, triple_step, integrate_left, integrate_parabol, integrate_right, integrate_trapec } from '../appLogic/js/alg'
 
 const initialState = {
     endpoint: '',
@@ -57,8 +57,8 @@ export const intState = createSlice({
                 case 'double_step':
                     state.value.result = String(double_step(state.value.a, state.value.b, state.value.e, state.value.innteg));
                     break
-                case 'hz_step':
-                    state.value.result = String(hz_step(state.value.a, state.value.b, state.value.e, state.value.innteg));
+                case 'triple_step':
+                    state.value.result = String(triple_step(state.value.a, state.value.b, state.value.e, state.value.innteg));
                     break
                 case 'even_alg':
                     state.value.result = String(even_alg(state.value.a, state.value.b, state.value.c, state.value.d, state.value.innteg));

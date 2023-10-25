@@ -13,7 +13,7 @@ const CardList = () => {
                 <div>Переменный шаг</div>
                 <ul className="ul-1">
                     <li><a onClick={() => dispatch(updateEndPoint('double_step'))}>С двойной проверкой</a></li>
-                    <li><a onClick={() => dispatch(updateEndPoint('hz_step'))}>С тройной проверкой</a></li>
+                    <li><a onClick={() => dispatch(updateEndPoint('triple_step'))}>С тройной проверкой</a></li>
                 </ul>
             </div>
 
