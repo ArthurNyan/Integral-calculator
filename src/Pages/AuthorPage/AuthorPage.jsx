@@ -16,7 +16,7 @@ const autors = [
     {
         id: 3,
         name: 'Киняев Илья Константинович',
-        email: 'email',
+        email: 'ikinyaev2004@mail.ru',
         img: '../../../esh.jpg'
     },
     {

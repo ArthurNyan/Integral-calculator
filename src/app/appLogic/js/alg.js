@@ -16,10 +16,10 @@ export const integrate_left = (a, b, equation) => {
 export const integrate_right = (a, b, equation) => {
     let sum = 0
     let step = (b - a) / n
-    let x = a
-    while (x <= b) {
+    let x = b
+    while (x >= a) {
         sum += solve(x, equation)
-        x += step
+        x -= step
     }
     return sum * step
 }
