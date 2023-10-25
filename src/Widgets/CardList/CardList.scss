@@ -1,7 +1,7 @@
-.section{
-    display: flex;
-    justify-content: space-around;
-    margin: 120px 90px;
+.section {
+  display: flex;
+  justify-content: space-around;
+  margin: 120px 90px;
 }
 
 .first-section {
@@ -31,6 +31,13 @@
   background-color: #a98467;
 }
 
-.www{
+.www {
   color: red;
+}
+
+.in-bilde {
+  text-align: center;
+  color: #a98467;
+  margin: 20px;
+  font-size: 30px;
 }

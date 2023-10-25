@@ -1,6 +1,6 @@
 import React from 'react'
 import './CardList.scss'
-import { useDispatch} from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { updateEndPoint } from '../../app/store/intSlice'
 
 const CardList = () => {
@@ -13,7 +13,7 @@ const CardList = () => {
                 <div>Переменный шаг</div>
                 <ul className="ul-1">
                     <li><a onClick={() => dispatch(updateEndPoint('double_step'))}>С двойной проверкой</a></li>
-                    <li><a onClick={() => dispatch(updateEndPoint('hz_step'))}>С какой-то проверкой</a></li>
+                    <li><a onClick={() => dispatch(updateEndPoint('hz_step'))}>С тройной проверкой</a></li>
                 </ul>
             </div>
 
@@ -29,7 +29,7 @@ const CardList = () => {
             <div className="mg">
                 <div>Кратное</div>
                 <ul>
-                    <li><a onClick={() => dispatch(updateEndPoint('even_alg'))}>Lorem ipsum dolor sit amet consectetur</a></li>
+                    <li><a onClick={() => dispatch(updateEndPoint('even_alg'))}>Способ кратной проверки</a></li>
                 </ul>
             </div>
         </div>
@@ -44,18 +44,19 @@ const CardList = () => {
             </div>
 
             <div className="mg">
-                <div >Тоже шаг</div>
+                <div >Алгоритм</div>
                 <ul>
                     <li><a onClick={() => dispatch(updateEndPoint())} >Треугольник какой-то</a></li>
                 </ul>
             </div>
             <div className="mg">
-                <div>Кратное</div>
+                <div>Алгоритм</div>
                 <ul>
                     <li><a onClick={() => dispatch(updateEndPoint())} >Кратный тругольник</a></li>
                     <li><a onClick={() => dispatch(updateEndPoint())} >Квадратный треугольник</a></li>
                 </ul>
             </div>
+            <div className="in-bilde">В разработке </div>
         </div>
     </section>
 }

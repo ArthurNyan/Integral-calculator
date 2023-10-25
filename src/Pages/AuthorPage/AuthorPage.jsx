@@ -17,18 +17,18 @@ const autors = [
         id: 3,
         name: 'Киняев Илья Константинович',
         email: 'email',
-        img:  '../../../esh.jpg'
+        img: '../../../esh.jpg'
     },
     {
         id: 4,
         name: 'Магер Егор Владимирович',
-        email: 'email',
+        email: 'egor.mager.hl@mail.ru',
         img: '../../../kopat.jpeg'
     },
     {
         id: 5,
         name: 'Сурков Андрей Анатольевич',
-        email: 'email',
+        email: 'andrey.surk.2904@gmail.com',
         img: '../../../los.jpg'
     },
 ]
