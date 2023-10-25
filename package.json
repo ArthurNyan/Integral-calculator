@@ -2,7 +2,7 @@
   "name": "integralcalculator",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://arthurnyan.github.io/Integral-calculator",
+  "homepage": "https://ArthurNyan.github.io/Integral-calculator",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
