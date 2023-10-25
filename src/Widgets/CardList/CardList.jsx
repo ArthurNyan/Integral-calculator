@@ -35,6 +35,7 @@ const CardList = () => {
         </div>
         <div className="first-section">
             <div className="block-1">Дифференциал</div>
+            <div className="in-bilde">В разработке </div>
             <div className="mg">
                 <div>Переменный шаг</div>
                 <ul className="ul-1">
@@ -56,7 +57,6 @@ const CardList = () => {
                     <li><a onClick={() => dispatch(updateEndPoint())} >Квадратный треугольник</a></li>
                 </ul>
             </div>
-            <div className="in-bilde">В разработке </div>
         </div>
     </section>
 }
