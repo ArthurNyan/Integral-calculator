@@ -1,7 +1,7 @@
 import React from "react"
 import './IntApp.scss'
 import { useDispatch, useSelector } from "react-redux"
-import { updateA, updateB, updateC, updateD, updateE, updateInteg, updateResult } from "../../app/store/intSlice"
+import { updateA, updateB, updateC, updateD, updateE, updateInteg, updateN, updateResult } from "../../app/store/intSlice"
 
 
 const IntApp = (a, b) => {
@@ -10,6 +10,7 @@ const IntApp = (a, b) => {
     return <div className="container">
         <div>
             <input placeholder="b" type="number" name="text" id='inputB' className="input inp-2" onChange={() => { dispatch(updateB(Number(document.getElementById('inputB').value))) }} />
+            <input placeholder="n" type="number" name="text" id='inputN' className="input inp-2" onChange={() => { dispatch(updateN(Number(document.getElementById('inputN').value))) }} />
             {intState.endpoint === 'even_alg' &&
                 <input placeholder="d" type="number" name="text" id='inputD' className="input inp-2" onChange={() => { dispatch(updateD(Number(document.getElementById('inputD').value))) }} />}
             {(intState.endpoint === 'triple_step') &&
