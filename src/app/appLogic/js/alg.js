@@ -1,8 +1,6 @@
 import { solve, solve_even } from "./eval.js";
 
-const n = 1000;
-
-export const integrate_left = (a, b, equation) => {
+export const integrate_left = (a, b, equation, n) => {
     let sum = 0;
     let step = (b - a) / n;
     let x = a;
@@ -13,7 +11,7 @@ export const integrate_left = (a, b, equation) => {
     return sum * step
 }
 
-export const integrate_right = (a, b, equation) => {
+export const integrate_right = (a, b, equation, n) => {
     let sum = 0
     let step = (b - a) / n
     let x = b
@@ -24,7 +22,7 @@ export const integrate_right = (a, b, equation) => {
     return sum * step
 }
 
-export const integrate_trapec = (a, b, equation) => {
+export const integrate_trapec = (a, b, equation, n) => {
     let sum = 0;
     let step = (b - a) / n;
     let x1 = a;
@@ -37,7 +35,7 @@ export const integrate_trapec = (a, b, equation) => {
     return sum * step
 }
 
-export const integrate_parabol = (a, b, equation) => {
+export const integrate_parabol = (a, b, equation, n) => {
     let sum = 0;
     let step = (b - a) / n;
     let x1 = a;
@@ -72,7 +70,7 @@ export const double_step = (a, b, e, equation) => {
     return (i2)
 }
 
-export const triple_step = (a, b, e, equation) => {
+export const triple_step = (a, b, e, equation, n) => {
     let hv = Math.sqrt(e)
     let hd = hv
     let hs = 0
@@ -98,7 +96,7 @@ export const triple_step = (a, b, e, equation) => {
     return (i2)
 }
 
-export const even_alg = (a, b, c, d, equation) => {
+export const even_alg = (a, b, c, d, equation, n) => {
     let hx = (b - a) / n
     let hy = (d - c) / n
     let sx = 0

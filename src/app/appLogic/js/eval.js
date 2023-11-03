@@ -98,7 +98,7 @@ const cos = (x) => {
 
 export const solve = (x, input) => {
     try {
-        return eval(input)
+        return Math.abs(eval(input))
     } catch (err) {
         return "error"
     }
@@ -106,7 +106,7 @@ export const solve = (x, input) => {
 
 export const solve_even = (x, y, input) => {
     try {
-        return eval(input)
+        return Math.abs(eval(input))
     } catch (err) {
         return "error"
     }
