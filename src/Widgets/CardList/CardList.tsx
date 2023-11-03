@@ -39,22 +39,22 @@ const CardList = () => {
             <div className="mg">
                 <div>Переменный шаг</div>
                 <ul className="ul-1">
-                    <li><a onClick={() => dispatch(updateEndPoint())} >С двойной проверкаой</a></li>
-                    <li><a onClick={() => dispatch(updateEndPoint())}>Lorem ipsum dolor sit amet consectetur</a></li>
+                    <li><a onClick={() => dispatch(updateEndPoint(''))} >С двойной проверкаой</a></li>
+                    <li><a onClick={() => dispatch(updateEndPoint(''))}>Lorem ipsum dolor sit amet consectetur</a></li>
                 </ul>
             </div>
 
             <div className="mg">
                 <div >Алгоритм</div>
                 <ul>
-                    <li><a onClick={() => dispatch(updateEndPoint())} >Треугольник какой-то</a></li>
+                    <li><a onClick={() => dispatch(updateEndPoint(''))} >Треугольник какой-то</a></li>
                 </ul>
             </div>
             <div className="mg">
                 <div>Алгоритм</div>
                 <ul>
-                    <li><a onClick={() => dispatch(updateEndPoint())} >Кратный тругольник</a></li>
-                    <li><a onClick={() => dispatch(updateEndPoint())} >Квадратный треугольник</a></li>
+                    <li><a onClick={() => dispatch(updateEndPoint(''))} >Кратный тругольник</a></li>
+                    <li><a onClick={() => dispatch(updateEndPoint(''))} >Квадратный треугольник</a></li>
                 </ul>
             </div>
         </div>
