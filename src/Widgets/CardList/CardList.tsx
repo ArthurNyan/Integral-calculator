@@ -7,7 +7,7 @@ const CardList = () => {
     const dispatch = useDispatch()
 
     return <section className="section">
-        <div className="first-section">
+        <div className="card-section">
             <div className="block-1">Интеграл</div>
             <div className="mg">
                 <div>Переменный шаг</div>
@@ -16,7 +16,6 @@ const CardList = () => {
                     <li><a onClick={() => dispatch(updateEndPoint('triple_step'))}>С тройной проверкой</a></li>
                 </ul>
             </div>
-
             <div className="mg">
                 <div >Постоянный шаг</div>
                 <ul>
@@ -33,28 +32,26 @@ const CardList = () => {
                 </ul>
             </div>
         </div>
-        <div className="first-section">
+
+        <div className="card-section">
             <div className="block-1">Дифференциал</div>
-            <div className="in-bilde">В разработке </div>
             <div className="mg">
-                <div>Переменный шаг</div>
+                <div>Метод Эйлера</div>
                 <ul className="ul-1">
-                    <li><a onClick={() => dispatch(updateEndPoint(''))} >С двойной проверкаой</a></li>
-                    <li><a onClick={() => dispatch(updateEndPoint(''))}>Lorem ipsum dolor sit amet consectetur</a></li>
+                    <li><a onClick={() => dispatch(updateEndPoint('Auler-frist-order'))} >Первого порядка</a></li>
+                    <li><a onClick={() => dispatch(updateEndPoint('Auler-second-order'))}>Второго порядка</a></li>
+                    <li><a onClick={() => dispatch(updateEndPoint('Auler-third-order'))}>Третьего порядка</a></li>
+                    <li><a onClick={() => dispatch(updateEndPoint('Auler-fourth-order'))}>Четвертого порядка</a></li>
                 </ul>
             </div>
 
             <div className="mg">
-                <div >Алгоритм</div>
+                <div >Метод Рунге-Кутта</div>
                 <ul>
-                    <li><a onClick={() => dispatch(updateEndPoint(''))} >Треугольник какой-то</a></li>
-                </ul>
-            </div>
-            <div className="mg">
-                <div>Алгоритм</div>
-                <ul>
-                    <li><a onClick={() => dispatch(updateEndPoint(''))} >Кратный тругольник</a></li>
-                    <li><a onClick={() => dispatch(updateEndPoint(''))} >Квадратный треугольник</a></li>
+                <li><a onClick={() => dispatch(updateEndPoint('Ruk-frist-order'))} >Первого порядка</a></li>
+                    <li><a onClick={() => dispatch(updateEndPoint('Ruk-second-order'))}>Второго порядка</a></li>
+                    <li><a onClick={() => dispatch(updateEndPoint('Ruk-third-order'))}>Третьего порядка</a></li>
+                    <li><a onClick={() => dispatch(updateEndPoint('Ruk-fourth-order'))}>Четвертого порядка</a></li>
                 </ul>
             </div>
         </div>
