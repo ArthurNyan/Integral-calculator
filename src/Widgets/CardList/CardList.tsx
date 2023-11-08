@@ -32,7 +32,6 @@ const CardList = () => {
                 </ul>
             </div>
         </div>
-
         <div className="card-section">
             <div className="block-1">Дифференциал</div>
             <div className="mg">
@@ -48,10 +47,26 @@ const CardList = () => {
             <div className="mg">
                 <div >Метод Рунге-Кутта</div>
                 <ul>
-                <li><a onClick={() => dispatch(updateEndPoint('Ruk-frist-order'))} >Первого порядка</a></li>
+                    <li><a onClick={() => dispatch(updateEndPoint('Ruk-frist-order'))} >Первого порядка</a></li>
                     <li><a onClick={() => dispatch(updateEndPoint('Ruk-second-order'))}>Второго порядка</a></li>
                     <li><a onClick={() => dispatch(updateEndPoint('Ruk-third-order'))}>Третьего порядка</a></li>
                     <li><a onClick={() => dispatch(updateEndPoint('Ruk-fourth-order'))}>Четвертого порядка</a></li>
+                </ul>
+            </div>
+        </div>
+        <div className="card-section">
+            <div className="block-1">Нелинейные уравнения</div>
+            <div className="mg">
+                <div>Метод Арелея</div>
+                <ul className="ul-1">
+                    <li><a onClick={() => dispatch(updateEndPoint('Auler-frist-order'))} >Первого порядка</a></li>
+                </ul>
+            </div>
+
+            <div className="mg">
+                <div >Метод Кутта-Рунге</div>
+                <ul>
+                    <li><a onClick={() => dispatch(updateEndPoint('Ruk-frist-order'))} >Первого порядка</a></li>
                 </ul>
             </div>
         </div>
