@@ -1,7 +1,6 @@
-import React from 'react'
-import './CardList.scss'
-import { useDispatch } from 'react-redux'
-import { updateEndPoint } from '../../app/store/intSlice'
+import './CardList.scss';
+import { useDispatch } from 'react-redux';
+import { updateEndPoint } from '../../app/store/intSlice';
 
 const CardList = () => {
     const dispatch = useDispatch()
@@ -43,7 +42,6 @@ const CardList = () => {
                     <li><a onClick={() => dispatch(updateEndPoint('Auler-fourth-order'))}>Четвертого порядка</a></li>
                 </ul>
             </div>
-
             <div className="mg">
                 <div >Метод Рунге-Кутта</div>
                 <ul>
@@ -62,7 +60,6 @@ const CardList = () => {
                     <li><a onClick={() => dispatch(updateEndPoint('Auler-frist-order'))} >Первого порядка</a></li>
                 </ul>
             </div>
-
             <div className="mg">
                 <div >Метод Кутта-Рунге</div>
                 <ul>

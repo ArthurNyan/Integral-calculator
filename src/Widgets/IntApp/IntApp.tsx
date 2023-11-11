@@ -1,4 +1,3 @@
-import React from "react"
 import './IntApp.scss'
 import { useDispatch, useSelector } from "react-redux"
 import { updateA, updateB, updateC, updateD, updateE, updateInteg, updateN, updateResult } from "../../app/store/intSlice"

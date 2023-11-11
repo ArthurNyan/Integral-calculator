@@ -1,5 +1,4 @@
 import CardList from "../../Widgets/CardList/CardList"
-import React from "react";
 import IntApp from "../../Widgets/IntApp/IntApp";
 import { useSelector } from "react-redux";
 import { RootState } from "../../app/store/store";
