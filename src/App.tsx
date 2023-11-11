@@ -1,5 +1,5 @@
 import './App.scss'
-import Header from './Widgets/Header/Header'
+import Header from './widgets/Header/Header'
 import { RouterProvider } from './app/Provider/Provider';
 
 const App = () => {
