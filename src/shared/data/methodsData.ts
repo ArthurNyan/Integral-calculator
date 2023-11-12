@@ -5,7 +5,7 @@ export const methodsData = [
             {
                 title: 'Переменный шаг', subtitles: [
                     { name: 'С двойной проверкой', attribute: 'double_step' },
-                    { name: 'С двойной проверкой', attribute: 'triple_step' }
+                    { name: 'С тройной проверкой', attribute: 'triple_step' }
                 ]
             },
             {
@@ -54,7 +54,7 @@ export const methodsData = [
                 ]
             },
             {
-                title: 'Метод Эйлера', subtitles: [
+                title: 'Метод Кутта-ругне', subtitles: [
                     { name: 'Первого порядка', attribute: 'Auler_frist_order' },
                 ]
             },

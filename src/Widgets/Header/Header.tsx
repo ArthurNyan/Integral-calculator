@@ -11,7 +11,7 @@ const Header = () => {
                 <div>Герценовский калькулятор</div>
             </a>
             <ul className="ul">
-                <li className="li"><a href="/" className="link-head">Главная</a></li>
+                <li><a href="/" className="link-head">Главная</a></li>
                 <li><a href="author" className="link-head">Авторы</a></li>
             </ul>
         </nav>
