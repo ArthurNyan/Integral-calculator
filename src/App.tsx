@@ -1,7 +1,6 @@
-import './App.css'
+import './App.scss'
 import Header from './Widgets/Header/Header'
-import React from 'react';
-import { RouterProvider } from './Provider/Provider';
+import { RouterProvider } from './app/Provider/Provider';
 
 const App = () => {
   return <>
