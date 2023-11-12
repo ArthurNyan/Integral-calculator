@@ -1,7 +1,7 @@
-import IntApp from "../../widgets/IntApp/IntApp";
+import IntApp from "../../Widgets/IntApp/IntApp";
 import { useSelector } from "react-redux";
 import { RootState } from "../../app/store/store";
-import { MethodsList } from "../../widgets/MethodsList/MethodsList";
+import { MethodsList } from "../../Widgets/MethodsList/MethodsList";
 import { methodsData } from "../../shared/data/methodsData";
 
 const HomePage = () => {
