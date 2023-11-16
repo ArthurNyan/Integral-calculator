@@ -29,10 +29,10 @@ export const methodsData = [
         subtitles: [
             {
                 title: 'Метод Эйлера', subtitles: [
-                    { name: 'Первого порядка', attribute: 'Auler_frist_order' },
-                    { name: 'Второго порядка', attribute: 'Auler_second_order' },
-                    { name: 'Третьего порядка', attribute: 'Auler_third_order' },
-                    { name: 'Четвертого порядка', attribute: 'Auler_fourth_order' },
+                    { name: 'Первого порядка', attribute: 'Ailer_frist_order' },
+                    { name: 'Второго порядка', attribute: 'Ailer_second_order' },
+                    { name: 'Третьего порядка', attribute: 'Ailer_third_order' },
+                    { name: 'Четвертого порядка', attribute: 'Ailer_fourth_order' },
                 ]
             },
             {
@@ -50,14 +50,14 @@ export const methodsData = [
         subtitles: [
             {
                 title: 'Метод Эйлера', subtitles: [
-                    { name: 'Первого порядка', attribute: 'Auler_frist_order' },
+                    { name: 'Первого порядка', attribute: 'Ailer_frist_order' },
                 ]
             },
             {
                 title: 'Метод Кутта-ругне', subtitles: [
-                    { name: 'Первого порядка', attribute: 'Auler_frist_order' },
+                    { name: 'Первого порядка', attribute: 'Ailer_frist_order' },
                 ]
             },
         ]
-    }
+    },
 ]
