@@ -114,3 +114,13 @@ export const even_alg = (a, b, c, d, equation, n) => {
     }
     return hx * sx
 }
+
+const Ailer_first_order = (x, y, equation) => {
+    const h = (b - a) / n;
+    for (let i = 0; i < n; i++) {
+        y += h * equation;
+        x += h;
+        console.log(`#${i} -- ${[x, y]}`);
+    }
+    return [x, y];
+};

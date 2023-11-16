@@ -66,6 +66,30 @@ export const intState = createSlice({
                 case 'even_alg':
                     state.value.result = String(even_alg(state.value.a, state.value.b, state.value.c, state.value.d, state.value.innteg, state.value.n));
                     break
+                case 'Ailer_first_order':
+                    state.value.result = String(even_alg(state.value.a, state.value.b, state.value.c, state.value.d, state.value.innteg, state.value.n));
+                    break
+                case 'Ailer_second_order':
+                    state.value.result = String(even_alg(state.value.a, state.value.b, state.value.c, state.value.d, state.value.innteg, state.value.n));
+                    break
+                case 'Ailer_third_order':
+                    state.value.result = String(even_alg(state.value.a, state.value.b, state.value.c, state.value.d, state.value.innteg, state.value.n));
+                    break
+                case 'Ailer_fourth_order':
+                    state.value.result = String(even_alg(state.value.a, state.value.b, state.value.c, state.value.d, state.value.innteg, state.value.n));
+                    break
+                case 'Ruk_first_order':
+                    state.value.result = String(even_alg(state.value.a, state.value.b, state.value.c, state.value.d, state.value.innteg, state.value.n));
+                    break
+                case 'Ruk_second_order':
+                    state.value.result = String(even_alg(state.value.a, state.value.b, state.value.c, state.value.d, state.value.innteg, state.value.n));
+                    break
+                case 'Ruk_third_order':
+                    state.value.result = String(even_alg(state.value.a, state.value.b, state.value.c, state.value.d, state.value.innteg, state.value.n));
+                    break
+                case 'Ruk_fourth_order':
+                    state.value.result = String(even_alg(state.value.a, state.value.b, state.value.c, state.value.d, state.value.innteg, state.value.n));
+                    break
                 default:
                     state.value.result = ':('
             }
