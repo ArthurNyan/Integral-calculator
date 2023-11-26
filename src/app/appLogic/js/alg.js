@@ -1,4 +1,4 @@
-import { solve, solve_even } from "./eval.js";
+import { second_solve, solve, solve_even } from "./eval.js";
 
 export const integrate_left = (a, b, equation, n) => {
     let sum = 0;
@@ -115,12 +115,87 @@ export const even_alg = (a, b, c, d, equation, n) => {
     return hx * sx
 }
 
-const Ailer_first_order = (x, y, equation) => {
-    const h = (b - a) / n;
-    for (let i = 0; i < n; i++) {
-        y += h * equation;
+
+export const Ailer_first_order = (a, b, y0, equation, n) => {
+
+    let h = Math.abs(a - b) / n
+    let x = a;
+    let y = y0;
+
+    let answers = [];
+
+    while (x - x % 0.00000000000001 <= b) {
+        answers.push([y, x]);
+        y += h * solve_even(x, y, equation);
         x += h;
-        console.log(`#${i} -- ${[x, y]}`);
     }
-    return [x, y];
-};
+    return answers;
+}
+
+export const Ailer_second_order = (a, b, y0, dy, equation, n) => {
+    let h = Math.abs(a - b) / n
+    let x = a;
+    let y = y0;
+    let z = dy;
+
+    let answers = [];
+
+    while (x - x % 0.00000000000001 <= b) {
+        answers.push([y, x]);
+        y += h * z;
+        z += h * second_solve(x, y, z, equation) * -1;
+        x += h;
+    }
+    return answers;
+}
+
+export const Ruk_second_order = (a, b, y0, equation, n) => {
+
+    let h = Math.abs(a - b) / n
+    let x = a;
+    let y = y0;
+
+    let answers = [];
+
+    while (x - x % 0.00000000000001 <= b) {
+        answers.push([y, x]);
+        let k1 = h * solve_even(x, y, equation);
+        let k2 = h * solve_even(x + h / 2, y + k1 / 2, equation);
+        let k3 = h * solve_even(x + h / 2, y + k2 / 2, equation);
+        let k4 = h * solve_even(x + h, y + k3, equation);
+        let F = (k1 + 2 * k2 + 2 * k3 + k4) / 6;
+        x += h;
+        y += F;
+    }
+    return answers;
+}
+
+export const Ruk_first_order = (x0, b, y0, dy0, equation, n) => {
+    let h = Math.abs(x0 - b) / n
+    let x = x0;
+    let y = y0;
+    let z = dy0;
+
+    let answers = [];
+
+    while (x - x % 0.00000000000001 <= b) {
+        answers.push([y, x]);
+
+        let k1 = h * z;
+        let k2 = h * (z + k1 / 2);
+        let k3 = h * (z + k2 / 2);;
+        let k4 = h * (z + k3);
+        let F = (k1 + 2 * k2 + 2 * k3 + k4) / 6;
+        y += F;
+        k1 = h * second_solve(x, y, z, equation) * -1;
+        k2 = h * second_solve(x + h / 2, y + k1 / 2, z + k1 / 2, equation) * -1;
+        k3 = h * second_solve(x + h / 2, y + k2 / 2, z + k2 / 2, equation) * -1;
+        k4 = h * second_solve(x + h, y + k3, z + k3, equation) * -1;
+        F = (k1 + 2 * k2 + 2 * k3 + k4) / 6;
+
+        z += F
+
+        x += h;
+    }
+    return answers;
+}
