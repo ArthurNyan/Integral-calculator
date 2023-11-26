@@ -1,10 +1,10 @@
 .container {
-  display:inline-block;
+  display: inline-block;
   font-size: 26px;
   position: absolute;
   top: 60%;
   left: 50%;
-  transform: translate(-50%, -50%)
+  transform: translate(-50%, -50%);
 }
 
 .int-base {
@@ -70,4 +70,8 @@ span {
 
 .but-1:hover {
   border: 2px solid grey;
+}
+
+span {
+  font-size: 40px;
 }
