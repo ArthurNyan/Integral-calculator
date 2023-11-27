@@ -1,4 +1,6 @@
-export interface subtitleProp {
+import { FormParams } from "./formParams";
+
+export interface subtitleProp extends FormParams {
     name: string,
-    attribute: string,
+    endpoit: string,
 }
