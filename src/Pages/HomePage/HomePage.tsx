@@ -3,9 +3,6 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../app/store/store";
 import { MethodsList } from "../../Widgets/MethodsList/MethodsList";
 import { methodsData } from "../../shared/data/methodsData";
-import '../../Widgets/IntApp/IntApp.scss';
-
-
 
 const HomePage = () => {
     const pageState = useSelector((state: RootState) => state.pageState.value)
