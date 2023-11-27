@@ -125,7 +125,7 @@ export const Ailer_first_order = (a, b, y0, equation, n) => {
     let answers = [];
 
     while (x - x % 0.00000000000001 <= b) {
-        answers.push([y, x]);
+        answers.push([x, y]);
         y += h * solve_even(x, y, equation);
         x += h;
     }
@@ -141,7 +141,7 @@ export const Ailer_second_order = (a, b, y0, dy, equation, n) => {
     let answers = [];
 
     while (x - x % 0.00000000000001 <= b) {
-        answers.push([y, x]);
+        answers.push([x, y]);
         y += h * z;
         z += h * second_solve(x, y, z, equation) * -1;
         x += h;
@@ -149,7 +149,7 @@ export const Ailer_second_order = (a, b, y0, dy, equation, n) => {
     return answers;
 }
 
-export const Ruk_second_order = (a, b, y0, equation, n) => {
+export const Ruk_first_order = (a, b, y0, equation, n) => {
 
     let h = Math.abs(a - b) / n
     let x = a;
@@ -158,7 +158,7 @@ export const Ruk_second_order = (a, b, y0, equation, n) => {
     let answers = [];
 
     while (x - x % 0.00000000000001 <= b) {
-        answers.push([y, x]);
+        answers.push([x, y]);
         let k1 = h * solve_even(x, y, equation);
         let k2 = h * solve_even(x + h / 2, y + k1 / 2, equation);
         let k3 = h * solve_even(x + h / 2, y + k2 / 2, equation);
@@ -170,7 +170,7 @@ export const Ruk_second_order = (a, b, y0, equation, n) => {
     return answers;
 }
 
-export const Ruk_first_order = (x0, b, y0, dy0, equation, n) => {
+export const Ruk_second_order = (x0, b, y0, dy0, equation, n) => {
     let h = Math.abs(x0 - b) / n
     let x = x0;
     let y = y0;
@@ -179,7 +179,7 @@ export const Ruk_first_order = (x0, b, y0, dy0, equation, n) => {
     let answers = [];
 
     while (x - x % 0.00000000000001 <= b) {
-        answers.push([y, x]);
+        answers.push([x, y]);
 
         let k1 = h * z;
         let k2 = h * (z + k1 / 2);
