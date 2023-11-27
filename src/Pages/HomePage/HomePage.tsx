@@ -3,12 +3,14 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../app/store/store";
 import { MethodsList } from "../../Widgets/MethodsList/MethodsList";
 import { methodsData } from "../../shared/data/methodsData";
+import '../../Widgets/IntApp/IntApp.scss';
+
+
 
 const HomePage = () => {
-    const pageState = useSelector((state: RootState) => state.intState.endpoint)
-
+    const pageState = useSelector((state: RootState) => state.pageState.value)
     return <>
-        {(pageState === '') ? <MethodsList method_list={methodsData} /> : <IntApp />}
+        {(pageState.endpoit === '') ? <MethodsList method_list={methodsData} /> : <IntApp {...pageState} />}
     </>
 }
 
