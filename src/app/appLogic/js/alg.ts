@@ -140,7 +140,7 @@ export const Ailer_second_order = (a: number, b: number, y0: number, dy: number,
 
     let answers = [];
 
-    while (x - x % 0.00000000000001 <= b) {
+    while (x - x % 0.00000000000001 < b) {
         y += h * z;
         z += h * second_solve(x, y, z, equation) * -1;
         x += h;
@@ -157,7 +157,7 @@ export const Ruk_first_order = (a: number, b: number, y0: number, equation: stri
 
     let answers = [];
 
-    while (x - x % 0.00000000000001 <= b) {
+    while (x - x % 0.00000000000001 < b) {
         let k1 = h * solve_even(x, y, equation);
         let k2 = h * solve_even(x + h / 2, y + k1 / 2, equation);
         let k3 = h * solve_even(x + h / 2, y + k2 / 2, equation);
@@ -178,7 +178,7 @@ export const Ruk_second_order = (x0: number, b: number, y0: number, dy0: number,
 
     let answers = [];
 
-    while (x - x % 0.00000000000001 <= b) {
+    while (x - x % 0.00000000000001 < b) {
         let k1 = h * z;
         let k2 = h * (z + k1 / 2);
         let k3 = h * (z + k2 / 2);;
