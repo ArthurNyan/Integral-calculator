@@ -1,17 +1,18 @@
 import { second_solve, solve, solve_even } from "./eval.js";
 
-export const integrate_left = (a, b, equation, n) => {
+export const integrate_left = (a: number, b: number, equation: string, n: number) => {
     let sum = 0;
     let step = (b - a) / n;
     let x = a;
     while (x <= b) {
-        sum += solve(x, equation)
+        let sol = solve(x, equation);
+        sum += sol;
         x += step
     }
     return sum * step
 }
 
-export const integrate_right = (a, b, equation, n) => {
+export const integrate_right = (a: number, b: number, equation: string, n: number) => {
     let sum = 0
     let step = (b - a) / n
     let x = b
@@ -22,7 +23,7 @@ export const integrate_right = (a, b, equation, n) => {
     return sum * step
 }
 
-export const integrate_trapec = (a, b, equation, n) => {
+export const integrate_trapec = (a: number, b: number, equation: string, n: number) => {
     let sum = 0;
     let step = (b - a) / n;
     let x1 = a;
@@ -35,7 +36,7 @@ export const integrate_trapec = (a, b, equation, n) => {
     return sum * step
 }
 
-export const integrate_parabol = (a, b, equation, n) => {
+export const integrate_parabol = (a: number, b: number, equation: string, n: number) => {
     let sum = 0;
     let step = (b - a) / n;
     let x1 = a;
@@ -49,7 +50,7 @@ export const integrate_parabol = (a, b, equation, n) => {
     return sum * (step / 3)
 }
 
-export const double_step = (a, b, e, equation) => {
+export const double_step = (a: number, b: number, e: number, equation: string) => {
     let h = Math.sqrt(e)
     let i1 = 0
     let i2 = 0
@@ -70,7 +71,7 @@ export const double_step = (a, b, e, equation) => {
     return (i2)
 }
 
-export const triple_step = (a, b, e, equation, n) => {
+export const triple_step = (a: number, b: number, e: number, equation: string) => {
     let hv = Math.sqrt(e)
     let hd = hv
     let hs = 0
@@ -96,7 +97,7 @@ export const triple_step = (a, b, e, equation, n) => {
     return (i2)
 }
 
-export const even_alg = (a, b, c, d, equation, n) => {
+export const even_alg = (a: number, b: number, c: number, d: number, equation: string, n: number) => {
     let hx = (b - a) / n
     let hy = (d - c) / n
     let sx = 0
@@ -115,8 +116,7 @@ export const even_alg = (a, b, c, d, equation, n) => {
     return hx * sx
 }
 
-
-export const Ailer_first_order = (a, b, y0, equation, n) => {
+export const Ailer_first_order = (a: number, b: number, y0: number, equation: string, n: number) => {
 
     let h = Math.abs(a - b) / n
     let x = a;
@@ -125,14 +125,14 @@ export const Ailer_first_order = (a, b, y0, equation, n) => {
     let answers = [];
 
     while (x - x % 0.00000000000001 <= b) {
-        answers.push([x, y]);
+        answers.push({ x: x, y: y });
         y += h * solve_even(x, y, equation);
         x += h;
     }
     return answers;
 }
 
-export const Ailer_second_order = (a, b, y0, dy, equation, n) => {
+export const Ailer_second_order = (a: number, b: number, y0: number, dy: number, equation: string, n: number) => {
     let h = Math.abs(a - b) / n
     let x = a;
     let y = y0;
@@ -141,15 +141,15 @@ export const Ailer_second_order = (a, b, y0, dy, equation, n) => {
     let answers = [];
 
     while (x - x % 0.00000000000001 <= b) {
-        answers.push([x, y]);
         y += h * z;
         z += h * second_solve(x, y, z, equation) * -1;
         x += h;
+        answers.push({ x: x, y: y });
     }
     return answers;
 }
 
-export const Ruk_first_order = (a, b, y0, equation, n) => {
+export const Ruk_first_order = (a: number, b: number, y0: number, equation: string, n: number) => {
 
     let h = Math.abs(a - b) / n
     let x = a;
@@ -158,7 +158,6 @@ export const Ruk_first_order = (a, b, y0, equation, n) => {
     let answers = [];
 
     while (x - x % 0.00000000000001 <= b) {
-        answers.push([x, y]);
         let k1 = h * solve_even(x, y, equation);
         let k2 = h * solve_even(x + h / 2, y + k1 / 2, equation);
         let k3 = h * solve_even(x + h / 2, y + k2 / 2, equation);
@@ -166,11 +165,12 @@ export const Ruk_first_order = (a, b, y0, equation, n) => {
         let F = (k1 + 2 * k2 + 2 * k3 + k4) / 6;
         x += h;
         y += F;
+        answers.push({ x: x, y: y });
     }
     return answers;
 }
 
-export const Ruk_second_order = (x0, b, y0, dy0, equation, n) => {
+export const Ruk_second_order = (x0: number, b: number, y0: number, dy0: number, equation: string, n: number) => {
     let h = Math.abs(x0 - b) / n
     let x = x0;
     let y = y0;
@@ -179,8 +179,6 @@ export const Ruk_second_order = (x0, b, y0, dy0, equation, n) => {
     let answers = [];
 
     while (x - x % 0.00000000000001 <= b) {
-        answers.push([x, y]);
-
         let k1 = h * z;
         let k2 = h * (z + k1 / 2);
         let k3 = h * (z + k2 / 2);;
@@ -192,10 +190,9 @@ export const Ruk_second_order = (x0, b, y0, dy0, equation, n) => {
         k3 = h * second_solve(x + h / 2, y + k2 / 2, z + k2 / 2, equation) * -1;
         k4 = h * second_solve(x + h, y + k3, z + k3, equation) * -1;
         F = (k1 + 2 * k2 + 2 * k3 + k4) / 6;
-
         z += F
-
         x += h;
+        answers.push({ x: x, y: y });
     }
     return answers;
 }
