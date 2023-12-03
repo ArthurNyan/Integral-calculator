@@ -1,4 +1,4 @@
-import { second_solve, sissolve, solve, solve_even } from "./eval.js";
+import { sissolve, second_solve, solve, solve_even } from "./eval.js";
 
 export const integrate_left = (a: number, b: number, equation: string, n: number) => {
     let sum = 0;
@@ -181,7 +181,7 @@ export const Ruk_second_order = (x0: number, b: number, y0: number, dy0: number,
     while (x - x % 0.00000000000001 < b) {
         let k1 = h * z;
         let k2 = h * (z + k1 / 2);
-        let k3 = h * (z + k2 / 2);;
+        let k3 = h * (z + k2 / 2);
         let k4 = h * (z + k3);
         let F = (k1 + 2 * k2 + 2 * k3 + k4) / 6;
         y += F;
@@ -197,26 +197,36 @@ export const Ruk_second_order = (x0: number, b: number, y0: number, dy0: number,
     return answers;
 }
 
-
-
-export const defur_sistem_third = (x0: number, b: number, fy1: number, fy2: number, fy3: number, n: number, eq1: string, eq2: string, eq3: string) => {
+export const defur_sistem_third = (
+    x0: number,
+    b: number,
+    fy1: number,
+    fy2: number,
+    fy3: number,
+    eq1: string,
+    eq2: string,
+    eq3: string,
+    n: number
+) => {
 
     let h = Math.abs(x0 - b) / n
-    let x = x0;
+    let t = x0;
     let y1 = fy1;
     let y2 = fy2;
     let y3 = fy3;
-
-    let answers: number[][] = [];
-
-    while (x - x % 0.00000000000001 <= b) {
-        answers.push([x, y1, y2, y3]);
-        let oldy1 = y1; let oldy2 = y2; let oldy3 = y3;
-        y1 += h * sissolve(x, oldy1, oldy2, oldy3, eq1);
-        y2 += h * sissolve(x, oldy1, oldy2, oldy3, eq2);
-        y3 += h * sissolve(x, oldy1, oldy2, oldy3, eq3);
-        x += h;
-
+    let answers = [];
+    let oldy1: number;
+    let oldy2: number;
+    let oldy3: number;
+    while (t - t % 0.00000000000001 <= b) {
+        answers.push({ t: t, x: y1, y: y2, z: y3 });
+        oldy1 = y1;
+        oldy2 = y2;
+        oldy3 = y3;
+        y1 += h * sissolve(t, oldy1, oldy2, oldy3, eq1);
+        y2 += h * sissolve(t, oldy1, oldy2, oldy3, eq2);
+        y3 += h * sissolve(t, oldy1, oldy2, oldy3, eq3);
+        t += h;
     }
     return answers;
 }
