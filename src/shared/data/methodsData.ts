@@ -1,24 +1,26 @@
-export const methodsData = [
+import { methodProp } from "../assets/lib/methodProp";
+
+export const methodsData: methodProp[] = [
     {
         title: 'Интеграл',
         subtitles: [
             {
                 title: 'Переменный шаг', subtitles: [
-                    { name: 'С двойной проверкой', attribute: 'double_step' },
-                    { name: 'С тройной проверкой', attribute: 'triple_step' }
+                    { name: 'С двойной проверкой', endpoit: 'double_step', preParams: ['b', 'e', 'n'], postParams: ['a'] },
+                    { name: 'С тройной проверкой', endpoit: 'triple_step', preParams: ['b', 'e', 'n'], postParams: ['a'] }
                 ]
             },
             {
                 title: 'Постоянный шаг', subtitles: [
-                    { name: 'Способ левых прямоугольников', attribute: 'integrate_left' },
-                    { name: 'Способ правых прямоугольников', attribute: 'integrate_right' },
-                    { name: 'Способ трапеций', attribute: 'integrate_trapec' },
-                    { name: 'Способ порабол', attribute: 'integrate_parabol' },
+                    { name: 'Способ левых прямоугольников', endpoit: 'integrate_left', preParams: ['b', 'n'], postParams: ['a'] },
+                    { name: 'Способ правых прямоугольников', endpoit: 'integrate_right', preParams: ['b', 'n'], postParams: ['a'] },
+                    { name: 'Способ трапеций', endpoit: 'integrate_trapec', preParams: ['b', 'n'], postParams: ['a'] },
+                    { name: 'Способ порабол', endpoit: 'integrate_parabol', preParams: ['b', 'n'], postParams: ['a'] },
                 ]
             },
             {
                 title: 'Кратное', subtitles: [
-                    { name: 'Способ кратной проверки', attribute: 'even_alg' },
+                    { name: 'Способ кратной проверки', endpoit: 'even_alg', preParams: ['b', 'd', 'n'], postParams: ['a', 'c'], },
                 ]
             },
 
@@ -29,18 +31,19 @@ export const methodsData = [
         subtitles: [
             {
                 title: 'Метод Эйлера', subtitles: [
-                    { name: 'Первого порядка', attribute: 'Auler_frist_order' },
-                    { name: 'Второго порядка', attribute: 'Auler_second_order' },
-                    { name: 'Третьего порядка', attribute: 'Auler_third_order' },
-                    { name: 'Четвертого порядка', attribute: 'Auler_fourth_order' },
+                    { name: 'Первого порядка', endpoit: 'Ailer_first_order', activeDef: true, preParams: ['b', 'y', 'n'], postParams: ['a'] },
+                    { name: 'Второго порядка', endpoit: 'Ailer_second_order', activeDef: true, preParams: ['b', 'y', 'd', 'n'], postParams: ['a'], double: true },
                 ]
             },
             {
                 title: 'Метод Рунге-Кутта', subtitles: [
-                    { name: 'Первого порядка', attribute: 'Ruk_frist_order' },
-                    { name: 'Второго порядка', attribute: 'Ruk_second_order' },
-                    { name: 'Третьего порядка', attribute: 'Ruk_third_order' },
-                    { name: 'Четвертого порядка', attribute: 'Ruk_fourth_order' },
+                    { name: 'Первого порядка', endpoit: 'Ruk_first_order', activeDef: true, preParams: ['b', 'y', 'n'], postParams: ['a'] },
+                    { name: 'Второго порядка', endpoit: 'Ruk_second_order', activeDef: true, preParams: ['b', 'y', 'd', 'n'], postParams: ['a'], double: true, },
+                ]
+            },
+            {
+                title: 'Система дифференцальных уравнений', subtitles: [
+                    { name: 'Система трех уравнений', endpoit: 'defur_sistem_third', thirdSistem: true, preParams: ['b', 'x', 'y', 'z','n'], postParams: ['a'], },
                 ]
             },
         ]
@@ -49,15 +52,10 @@ export const methodsData = [
         title: 'Нелинейные уравнения',
         subtitles: [
             {
-                title: 'Метод Эйлера', subtitles: [
-                    { name: 'Первого порядка', attribute: 'Auler_frist_order' },
-                ]
-            },
-            {
-                title: 'Метод Кутта-ругне', subtitles: [
-                    { name: 'Первого порядка', attribute: 'Auler_frist_order' },
+                title: '⚙️В разработке', subtitles: [
+                    { name: '...', endpoit: '...', postParams: [], preParams: [] },
                 ]
             },
         ]
-    }
+    },
 ]

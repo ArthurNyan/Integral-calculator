@@ -1,15 +1,17 @@
 import { useDispatch } from "react-redux";
 import { subtitleProp } from "../../shared/assets/lib/subtitleProp"
-import { updateEndPoint } from "../../app/store/intSlice";
+import { updateState } from "../../app/store/pageSlice";
 
-export const SubtitleCard = ({ attribute, name }: subtitleProp) => {
+export const SubtitleCard = (params: subtitleProp) => {
     const dispatch = useDispatch();
     return <li>
         <a
             onClick={
-                () => dispatch(updateEndPoint(attribute))}
+                () => dispatch(updateState(params))
+
+            }
         >
-            {name}
+            {params.name}
         </a>
     </li>
 }

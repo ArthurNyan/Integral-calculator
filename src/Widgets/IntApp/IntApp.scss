@@ -1,10 +1,11 @@
+//  Test
 .container {
-  display:inline-block;
+  display: inline-block;
   font-size: 26px;
-  position: absolute;
+  position: relative;
   top: 60%;
   left: 50%;
-  transform: translate(-50%, -50%)
+  transform: translate(-50%, -50%);
 }
 
 .int-base {
@@ -21,15 +22,13 @@
   outline: none;
   transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
   box-shadow: 0px 0px 20px -18px;
-}
-
-.input:hover {
-  border: 2px solid lightgrey;
-  box-shadow: 0px 0px 20px -17px;
-}
-
-.input:focus {
-  border: 2px solid grey;
+  &:hover {
+    border: 2px solid lightgrey;
+    box-shadow: 0px 0px 20px -17px;
+  }
+  &:focus {
+    border: 2px solid grey;
+  }
 }
 
 .inp-2 {
@@ -70,4 +69,15 @@ span {
 
 .but-1:hover {
   border: 2px solid grey;
+}
+
+span {
+  font-size: 40px;
+}
+
+.sitsem {
+  text-align: center;
+  font-size: 100px;
+  width: 50px;
+  height: 170px;
 }
