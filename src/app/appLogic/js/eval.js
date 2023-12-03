@@ -112,7 +112,7 @@ export const solve_even = (x, y, input) => {
     }
 }
 
-export const second_solve  = (x, y, dy, input) => {
+export const second_solve = (x, y, dy, input) => {
     try {
         return Math.abs(eval(input))
     } catch (err) {
@@ -120,3 +120,10 @@ export const second_solve  = (x, y, dy, input) => {
     }
 }
 
+export const sissolve = (t, x, y, z, input) => {
+    try {
+        return eval(input)
+    } catch (err) {
+        return 0
+    }
+}

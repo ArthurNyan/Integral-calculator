@@ -1,8 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { Ailer_first_order, Ailer_second_order, Ruk_first_order, Ruk_second_order, double_step, even_alg, integrate_left, integrate_parabol, integrate_right, integrate_trapec, triple_step } from '../appLogic/js/alg';
+import { Ailer_first_order, Ailer_second_order, Ruk_first_order, Ruk_second_order, defur_sistem_third, double_step, even_alg, integrate_left, integrate_parabol, integrate_right, integrate_trapec, triple_step } from '../appLogic/js/alg';
+import { intState as intType } from '../../shared/assets/lib/IntState';
 
 const initialState = {
-    value: {
+    value: <intType>{
         a: null,
         b: null,
         c: null,
@@ -13,6 +14,8 @@ const initialState = {
         y: null,
         equation: null,
         result: 'Ответ',
+        resultOb: [],
+        thirdSistem: []
     }
 };
 
@@ -21,11 +24,9 @@ export const intState = createSlice({
     initialState,
     reducers: {
         updateValue: (state, action) => {
-            console.log(action.payload);
             state.value = { ...state.value, ...action.payload };
         },
         updateResult: (state, action) => {
-            console.log(action.payload)
             switch (action.payload) {
                 case 'integrate_left':
                     state.value.result = String(integrate_left(state.value.a, state.value.b, state.value.equation, state.value.n));
@@ -49,16 +50,19 @@ export const intState = createSlice({
                     state.value.result = String(even_alg(state.value.a, state.value.b, state.value.c, state.value.d, state.value.equation, state.value.n));
                     break
                 case 'Ailer_first_order':
-                    state.value.result = String(Ailer_first_order(state.value.a, state.value.b, state.value.y, state.value.equation, state.value.n));
+                    state.value.resultOb = Ailer_first_order(state.value.a, state.value.b, state.value.y, state.value.equation, state.value.n);
                     break
                 case 'Ailer_second_order':
-                    state.value.result = String(Ailer_second_order(state.value.a, state.value.b, state.value.y, state.value.d, state.value.equation, state.value.n));
+                    state.value.resultOb = Ailer_second_order(state.value.a, state.value.b, state.value.y, state.value.d, state.value.equation, state.value.n);
                     break
                 case 'Ruk_first_order':
-                    state.value.result = String(Ruk_first_order(state.value.a, state.value.b, state.value.y, state.value.equation, state.value.n));
+                    state.value.resultOb = Ruk_first_order(state.value.a, state.value.b, state.value.y, state.value.equation, state.value.n);
                     break
                 case 'Ruk_second_order':
-                    state.value.result = String(Ruk_second_order(state.value.a, state.value.b, state.value.y, state.value.d, state.value.equation, state.value.n));
+                    state.value.resultOb = Ruk_second_order(state.value.a, state.value.b, state.value.y, state.value.d, state.value.equation, state.value.n);
+                    break
+                case 'defur_sistem_third':
+                    state.value.resultOb = defur_sistem_third(state.value.a, state.value.b, state.value.y, state.value.d, state.value.equation, state.value.n);
                     break
                 default:
                     state.value.result = ':('

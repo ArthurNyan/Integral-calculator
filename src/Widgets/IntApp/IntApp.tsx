@@ -1,4 +1,4 @@
-import { DefureEqual } from '../../features/DefureEqual/DefureEqual';
+import { DefureEqual } from '../DefureEqual/DefureEqual';
 import { FormParams } from '../../shared/assets/lib/formParams';
 import './IntApp.scss';
 
