@@ -54,3 +54,34 @@ export const Canvas = () => {
     <Line options={options} data={data} />
   </section>
 }
+
+export const SisCanvas = () => {
+  const dataObject = useSelector((state: RootState) => state.intState.value.resultOb);
+  const data = {
+    labels: dataObject.map((res) => String(res.t)),
+    datasets: [
+      {
+        label: 'Defure 1',
+        data: dataObject.map((res) => res.x),
+        borderColor: 'rgb(255, 99, 132)',
+        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+      },
+      {
+        label: 'Defure 2',
+        data: dataObject.map((res) => res.y),
+        borderColor: 'rgb(255, 99, 132)',
+        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+      },
+      {
+        label: 'Defure 3',
+        data: dataObject.map((res) => res.z),
+        borderColor: 'rgb(255, 99, 132)',
+        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+      },
+    ],
+  };
+
+  return <section>
+    <Line options={options} data={data} />
+  </section>
+}
