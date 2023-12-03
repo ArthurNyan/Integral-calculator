@@ -12,7 +12,10 @@ const initialState = {
         n: null,
         x: null,
         y: null,
+        z: null,
         equation: null,
+        equation2: null,
+        equation3: null,
         result: 'Ответ',
         resultOb: [],
         thirdSistem: []
@@ -62,7 +65,7 @@ export const intState = createSlice({
                     state.value.resultOb = Ruk_second_order(state.value.a, state.value.b, state.value.y, state.value.d, state.value.equation, state.value.n);
                     break
                 case 'defur_sistem_third':
-                    state.value.resultOb = defur_sistem_third(state.value.a, state.value.b, state.value.y, state.value.d, state.value.equation, state.value.n);
+                    state.value.resultOb = defur_sistem_third(state.value.a, state.value.b, state.value.x, state.value.y, state.value.z, state.value.equation,state.value.equation2,state.value.equation3, state.value.n);
                     break
                 default:
                     state.value.result = ':('
