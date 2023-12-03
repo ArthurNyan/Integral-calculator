@@ -52,13 +52,8 @@ export const methodsData: methodProp[] = [
         title: 'Нелинейные уравнения',
         subtitles: [
             {
-                title: 'Метод Эйлера', subtitles: [
-                    { name: 'Первого порядка', endpoit: 'Ailer_first_owdrder', postParams: [], preParams: [] },
-                ]
-            },
-            {
-                title: 'Метод Кутта-ругне', subtitles: [
-                    { name: 'Первого порядка', endpoit: 'Ailer_firswdwadt_order', postParams: [], preParams: [''] },
+                title: '⚙️В разработке', subtitles: [
+                    { name: '...', endpoit: '...', postParams: [], preParams: [] },
                 ]
             },
         ]
