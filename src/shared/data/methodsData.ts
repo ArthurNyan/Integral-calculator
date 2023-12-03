@@ -20,7 +20,7 @@ export const methodsData: methodProp[] = [
             },
             {
                 title: 'Кратное', subtitles: [
-                    { name: 'Способ кратной проверки', endpoit: 'even_alg', preParams: ['b', 'd', 'n'], postParams: ['a', 'c'],  },
+                    { name: 'Способ кратной проверки', endpoit: 'even_alg', preParams: ['b', 'd', 'n'], postParams: ['a', 'c'], },
                 ]
             },
 
@@ -38,12 +38,12 @@ export const methodsData: methodProp[] = [
             {
                 title: 'Метод Рунге-Кутта', subtitles: [
                     { name: 'Первого порядка', endpoit: 'Ruk_first_order', activeDef: true, preParams: ['b', 'y', 'n'], postParams: ['a'] },
-                    { name: 'Второго порядка', endpoit: 'Ruk_second_order', activeDef: true, preParams: ['b', 'y', 'd', 'n'], postParams: ['a'], double: true },
+                    { name: 'Второго порядка', endpoit: 'Ruk_second_order', activeDef: true, preParams: ['b', 'y', 'd', 'n'], postParams: ['a'], double: true, },
                 ]
             },
             {
                 title: 'Система дифференцальных уравнений', subtitles: [
-                    { name: 'Система трех уравнений', endpoit: 'defur_sistem_third', activeDef: true, preParams: ['b', 'y', 'n'], postParams: ['a'] },
+                    { name: 'Система трех уравнений', endpoit: 'defur_sistem_third', thirdSistem: true, preParams: ['b', 'x', 'y', 'z','n'], postParams: ['a'], },
                 ]
             },
         ]
