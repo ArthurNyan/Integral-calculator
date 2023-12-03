@@ -1,5 +1,4 @@
 import { methodProp } from "../assets/lib/methodProp";
-import { methodsProp } from "../assets/lib/methodsProp";
 
 export const methodsData: methodProp[] = [
     {
@@ -7,21 +6,21 @@ export const methodsData: methodProp[] = [
         subtitles: [
             {
                 title: 'Переменный шаг', subtitles: [
-                    { name: 'С двойной проверкой', endpoit: 'double_step', preParams: 'ben', postParams: 'a' },
-                    { name: 'С тройной проверкой', endpoit: 'triple_step', preParams: 'ben', postParams: 'a' }
+                    { name: 'С двойной проверкой', endpoit: 'double_step', preParams: ['b', 'e', 'n'], postParams: ['a'] },
+                    { name: 'С тройной проверкой', endpoit: 'triple_step', preParams: ['b', 'e', 'n'], postParams: ['a'] }
                 ]
             },
             {
                 title: 'Постоянный шаг', subtitles: [
-                    { name: 'Способ левых прямоугольников', endpoit: 'integrate_left', preParams: 'bn', postParams: 'a' },
-                    { name: 'Способ правых прямоугольников', endpoit: 'integrate_right', preParams: 'bn', postParams: 'a' },
-                    { name: 'Способ трапеций', endpoit: 'integrate_trapec', preParams: 'bn', postParams: 'a' },
-                    { name: 'Способ порабол', endpoit: 'integrate_parabol', preParams: 'bn', postParams: 'a' },
+                    { name: 'Способ левых прямоугольников', endpoit: 'integrate_left', preParams: ['b', 'n'], postParams: ['a'] },
+                    { name: 'Способ правых прямоугольников', endpoit: 'integrate_right', preParams: ['b', 'n'], postParams: ['a'] },
+                    { name: 'Способ трапеций', endpoit: 'integrate_trapec', preParams: ['b', 'n'], postParams: ['a'] },
+                    { name: 'Способ порабол', endpoit: 'integrate_parabol', preParams: ['b', 'n'], postParams: ['a'] },
                 ]
             },
             {
                 title: 'Кратное', subtitles: [
-                    { name: 'Способ кратной проверки', endpoit: 'even_alg', preParams: 'bdn', postParams: 'ac', double: true },
+                    { name: 'Способ кратной проверки', endpoit: 'even_alg', preParams: ['b', 'd', 'n'], postParams: ['a', 'c'],  },
                 ]
             },
 
@@ -32,14 +31,19 @@ export const methodsData: methodProp[] = [
         subtitles: [
             {
                 title: 'Метод Эйлера', subtitles: [
-                    { name: 'Первого порядка', endpoit: 'Ailer_first_order', activeDef: true, preParams: 'byn', postParams: 'a' },
-                    { name: 'Второго порядка', endpoit: 'Ailer_second_order', activeDef: true, preParams: 'bydn', postParams: 'a', double: true },
+                    { name: 'Первого порядка', endpoit: 'Ailer_first_order', activeDef: true, preParams: ['b', 'y', 'n'], postParams: ['a'] },
+                    { name: 'Второго порядка', endpoit: 'Ailer_second_order', activeDef: true, preParams: ['b', 'y', 'd', 'n'], postParams: ['a'], double: true },
                 ]
             },
             {
                 title: 'Метод Рунге-Кутта', subtitles: [
-                    { name: 'Первого порядка', endpoit: 'Ruk_first_order', activeDef: true, preParams: 'byn', postParams: 'a' },
-                    { name: 'Второго порядка', endpoit: 'Ruk_second_order', activeDef: true, preParams: 'bydn', postParams: 'a', double: true },
+                    { name: 'Первого порядка', endpoit: 'Ruk_first_order', activeDef: true, preParams: ['b', 'y', 'n'], postParams: ['a'] },
+                    { name: 'Второго порядка', endpoit: 'Ruk_second_order', activeDef: true, preParams: ['b', 'y', 'd', 'n'], postParams: ['a'], double: true },
+                ]
+            },
+            {
+                title: 'Система дифференцальных уравнений', subtitles: [
+                    { name: 'Система трех уравнений', endpoit: 'defur_sistem_third', activeDef: true, preParams: ['b', 'y', 'n'], postParams: ['a'] },
                 ]
             },
         ]
@@ -49,12 +53,12 @@ export const methodsData: methodProp[] = [
         subtitles: [
             {
                 title: 'Метод Эйлера', subtitles: [
-                    { name: 'Первого порядка', endpoit: 'Ailer_first_owdrder', postParams: '', preParams: '' },
+                    { name: 'Первого порядка', endpoit: 'Ailer_first_owdrder', postParams: [], preParams: [] },
                 ]
             },
             {
                 title: 'Метод Кутта-ругне', subtitles: [
-                    { name: 'Первого порядка', endpoit: 'Ailer_firswdwadt_order', postParams: '', preParams: '' },
+                    { name: 'Первого порядка', endpoit: 'Ailer_firswdwadt_order', postParams: [], preParams: [''] },
                 ]
             },
         ]
