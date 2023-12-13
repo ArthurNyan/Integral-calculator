@@ -43,7 +43,7 @@ export const methodsData: methodProp[] = [
             },
             {
                 title: 'Система дифференцальных уравнений', subtitles: [
-                    { name: 'Система трех уравнений', endpoit: 'defur_sistem_third', thirdSistem: true, preParams: ['b', 'x', 'y', 'z','n'], postParams: ['a'], },
+                    { name: 'Система трех уравнений', endpoit: 'defur_sistem_third', thirdSistem: true, preParams: ['b', 'x', 'y', 'z', 'n'], postParams: ['a'], },
                 ]
             },
         ]
@@ -52,8 +52,10 @@ export const methodsData: methodProp[] = [
         title: 'Нелинейные уравнения',
         subtitles: [
             {
-                title: '⚙️В разработке', subtitles: [
-                    { name: '...', endpoit: '...', postParams: [], preParams: [] },
+                title: 'Методы', subtitles: [
+                    { name: 'Метод касательной', endpoit: 'tangent', preParams: ['b', 'e'], postParams: ['a', 'h'], nonlinear: true },
+                    { name: 'Метод бисекции', endpoit: 'bisector', preParams: ['b', 'e'], postParams: ['a', 'h'], nonlinear: true },
+                    { name: 'Метод хорд', endpoit: 'chords', preParams: ['b', 'e'], postParams: ['a', 'h'], nonlinear: true },
                 ]
             },
         ]
