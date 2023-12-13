@@ -1,4 +1,5 @@
-import { sissolve, second_solve, solve, solve_even } from "./eval.js";
+import { derivative } from 'mathjs';
+import { sissolve, second_solve, solve, solve_even, solveNoAbs } from "./eval.js";
 
 export const integrate_left = (a: number, b: number, equation: string, n: number) => {
     let sum = 0;
@@ -215,9 +216,9 @@ export const defur_sistem_third = (
     let y2 = fy2;
     let y3 = fy3;
     let answers = [];
-    let oldy1: number;
-    let oldy2: number;
-    let oldy3: number;
+    let oldy1;
+    let oldy2;
+    let oldy3;
     while (t - t % 0.00000000000001 <= b) {
         answers.push({ t: t, x: y1, y: y2, z: y3 });
         oldy1 = y1;
@@ -229,4 +230,88 @@ export const defur_sistem_third = (
         t += h;
     }
     return answers;
+}
+
+export const split = (a: number, b: number, e: number, h: number, equation: string, meth: string) => {
+    let answers = [];
+    let w = 0;
+    while (a <= b) {
+        if (solveNoAbs(a + e, equation) * solveNoAbs(a + h, equation) <= 0) {
+            if (meth == "chords") {
+                let chord = chords(a + e, a + h, e, equation)
+                answers.push(chord)
+            }
+            else if (meth == "bisector") {
+                let bisect = bisector(a + e, a + h, e, equation)
+                answers.push(bisect)
+            }
+            else if (meth == "tangent") {
+                let anses = tangent(a + e, a + h, e, equation)
+                anses.forEach(ans => {
+                    answers.push(ans);
+                    a += h
+                })
+            }
+        }
+        a += h
+        w += 1
+    }
+    return answers ? answers : 0;
+}
+
+const chords = (a: number, b: number, e: number, equation: string) => {
+    let x0 = (a + b) / 2;
+    while (Math.abs(a - b) > e) {
+
+        x0 = a - ((b - a) / ((solveNoAbs(b, equation) - solveNoAbs(a, equation)))) * solveNoAbs(a, equation);
+        if (solveNoAbs(a, equation) * solveNoAbs(x0, equation) < 0) {
+            if (b == x0)
+                return x0;
+            b = x0;
+        }
+        else
+            if (a == x0)
+                return x0;
+        a = x0;
+    }
+    return x0;
+}
+
+const bisector = (a: number, b: number, e: number, equation: string) => {
+    let c0
+    while (Math.abs(a - b) > e) {
+        c0 = (a + b) / 2;
+        if (solveNoAbs(a, equation) * solveNoAbs(c0, equation) <= 0)
+            b = c0;
+        else
+            a = c0;
+    }
+    return c0;
+}
+
+const tangent = (a: number, b: number, e: number, equation: string) => {
+    let x0 = (a + b) / 2;
+    let x1 = a;
+    while (Math.abs(x1 - x0) > e) {
+
+        x1 = x0
+        x0 = x0 - solveNoAbs(x0, equation) / solveNoAbs(x0, derivative(equation, "x").toString())
+    }
+    let ans1 = x0;
+    x0 = (a + b) / 2;
+    x1 = a;
+
+
+    while (Math.abs(x1 - x0) > e) {
+        x1 = x0
+        x0 = x0 + solveNoAbs(x0, equation) / solveNoAbs(x0, derivative(equation, "x").toString())
+    }
+
+    let ans2 = x0;
+    if (Math.abs(ans1 - ans2) > e) {
+        return [ans1, ans2];
+    }
+    else {
+        return [ans1];
+    }
 }

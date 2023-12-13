@@ -7,8 +7,9 @@ import { SisTableResult, TableResult } from "../../features/TableResult/TableRes
 import { useState } from "react";
 import { Canvas, SisCanvas } from "../../features/Canvas/Canvas";
 import { TextField } from "../../features/TextField/TextField";
+import { Typography } from "@mui/material";
 
-export const DefureEqual = ({ preParams, postParams, activeDef = false, double = false, thirdSistem = false }: FormParams) => {
+export const DefureEqual = ({ preParams, postParams, activeDef = false, double = false, thirdSistem = false, nonlinear = false }: FormParams) => {
     const [state, setState] = useState<boolean>();
     const intState = useSelector((state: RootState) => state.intState.value);
     const endpoit = useSelector((state: RootState) => state.pageState.value.endpoit);
@@ -49,11 +50,15 @@ export const DefureEqual = ({ preParams, postParams, activeDef = false, double =
                         {double && <span>d</span>}
                         <span>d(y)</span>
                         <span>=</span>
-                    </> :
-                    <>
-                        <IntegralIcon />
-                        {double && <IntegralIcon />}
-                    </>)
+                    </> : (
+                        nonlinear ? null :
+                            <>
+                                <IntegralIcon />
+                                {double && <IntegralIcon />}
+
+                            </>
+                    )
+                )
             }
             {
                 !thirdSistem &&
@@ -63,7 +68,7 @@ export const DefureEqual = ({ preParams, postParams, activeDef = false, double =
             {
                 !thirdSistem && (!activeDef && <>
                     <span>=</span>
-                    <div id='result' className="inp-3">{intState.result}</div>
+                    <div id='result' className="inp-3">{nonlinear ? '0' : intState.result ? intState.result : 'Ответ'}</div>
                 </>)
             }
         </div>
@@ -72,7 +77,7 @@ export const DefureEqual = ({ preParams, postParams, activeDef = false, double =
                 <TextField params={postParams} />
             </>
         }
-        <button type="submit"
+        <button type="button"
             className="but-1"
             onClick={() => { dispatch(updateResult(endpoit)); setState(true) }}
         >
@@ -90,6 +95,10 @@ export const DefureEqual = ({ preParams, postParams, activeDef = false, double =
                 <SisCanvas />
             </>
         }
-    </div>
-}
-
+        {
+            nonlinear && state && (
+                intState.massresult?.map(res => <div key={res}><Typography variant="h5" key={res}>x = {res}</Typography></div>)
+            )
+        }
+    </ div>
+};
