@@ -4,4 +4,5 @@ export interface FormParams {
     activeDef?: boolean,
     double?: boolean,
     thirdSistem?: boolean,
+    nonlinear?: boolean,
 }
